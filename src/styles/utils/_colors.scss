@@ -1,0 +1,21 @@
+$colors: (
+    "primary/500": #5a4af4,
+    "primary/400": #7b6ef6,
+    "primary/300": #9c92f8,
+    "primary/200": #beb7fb,
+    "primary/100": #dedbfd,
+    "background/900": #121829,
+    "background/800": #20283e,
+    "background/700": #323b54,
+    "background/600": #475069,
+    "text/100": #c3c8d4,
+    "text/200": #a8aebf,
+    "text/300": #8e95a9,
+    "text/400": #767e94,
+    "text/500": #61697f,
+    "white/100": #ffffff,
+);
+
+@function color($key) {
+    @return map-get($colors, $key);
+}

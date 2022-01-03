@@ -1,0 +1,17 @@
+.hero {
+    padding: 0;
+}
+
+@include breakpoint("min", "sm") {
+    .hero {
+        padding: 4rem 20% 4rem 0;
+    }
+}
+
+@include breakpoint("min", "md") {
+    .hero {
+        padding: 6rem 40% 6rem 0;
+    }
+}
+
+@import "./hero-search";

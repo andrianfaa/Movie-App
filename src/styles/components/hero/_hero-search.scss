@@ -1,0 +1,63 @@
+.hero-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+
+    &-input {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        > .icon {
+            position: absolute;
+            z-index: 5;
+            left: 1rem;
+            vertical-align: middle;
+            transition: all 0.3s ease-in-out;
+        }
+
+        > input {
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            padding: 1.25rem 1.5rem 1.25rem 3.5rem;
+            border: 0.125rem solid color("background/700");
+            border-radius: 0.75rem;
+            background-color: rgba($color: #000000, $alpha: 0.1);
+            color: color("text/200");
+
+            &::placeholder {
+                transition: all 0.3s ease-in-out;
+                opacity: 0;
+                color: color("text/500");
+            }
+
+            &:hover {
+                border-color: color("primary/500");
+            }
+            &:focus {
+                padding: 1.75rem 1.5rem 0.75rem 3.5rem;
+
+                &::placeholder {
+                    opacity: 1;
+                }
+
+                ~ #heroSearchLabel {
+                    font-size: 0.75rem;
+                    transform: translateY(-1rem);
+                    color: color("text/300");
+                }
+            }
+        }
+
+        > #heroSearchLabel {
+            transition: all 0.3s ease-in-out;
+            position: absolute;
+            z-index: 5;
+            left: 3.5rem;
+            color: color("text/500");
+        }
+    }
+}

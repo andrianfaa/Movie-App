@@ -1,0 +1,121 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: color("white/100");
+}
+
+/*
+ * Typography: Headings
+ */
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 80px;
+    letter-spacing: -0.02rem;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 56px;
+    letter-spacing: -0.02rem;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.02rem;
+}
+
+@include breakpoint("min", "lg") {
+    h1 {
+        font-size: 64px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+}
+
+.overline {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 4%;
+
+    &-small {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 4%;
+    }
+}
+
+.caption {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0;
+}
+
+/*
+ * Typography: Body
+ */
+@mixin body-small {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+@mixin body-regular {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+@mixin body-large {
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0;
+}
+
+/*
+ * Typography: Link
+ */
+.link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2%;
+
+    &-small {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 2%;
+    }
+}
+
+@mixin link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2%;
+}
+
+@mixin link-small {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 2%;
+}

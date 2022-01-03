@@ -1,0 +1,54 @@
+.navbar-toggler {
+    width: 2.85rem;
+    height: 2.85rem;
+    padding: 0;
+    border: 0.1rem solid rgba($color: color("background/700"), $alpha: 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    position: relative;
+    background-color: rgba($color: color("background/700"), $alpha: 0.25);
+
+    > span {
+        width: 1.5rem;
+        height: 0.125rem;
+        border-radius: 5rem;
+        background-color: color("text/300");
+        position: absolute;
+        z-index: 5;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.25);
+
+        &:nth-child(1) {
+            transform: translateY(-0.5rem);
+        }
+
+        &:nth-child(3) {
+            transform: translateY(0.5rem);
+        }
+    }
+
+    &.close {
+        background-color: rgba($color: color("background/700"), $alpha: 0.75);
+
+        > span {
+            &:nth-child(1) {
+                transform: translateY(0) rotate(45+90deg);
+            }
+
+            &:nth-child(2) {
+                transform: rotate(-45+90deg);
+            }
+
+            &:nth-child(3) {
+                transform: translateY(0) rotate(45+180deg);
+            }
+        }
+    }
+}
+
+@include breakpoint("min", "md") {
+    .navbar-toggler {
+        display: none;
+    }
+}

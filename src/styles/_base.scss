@@ -1,0 +1,119 @@
+* {
+    &,
+    &::before,
+    &::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+    }
+}
+
+html {
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    @include body-small;
+    background-color: color("background/900");
+    color: color("text/400");
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../assets/images/background/background-xs.png");
+        background-size: 720px;
+        background-position: top center;
+    }
+}
+
+@include breakpoint("min", "sm") {
+    body {
+        @include body-regular;
+
+        &::after {
+            background-image: url("../assets/images/background/background-sm.png");
+            background-size: 1080px;
+        }
+    }
+}
+
+@include breakpoint("min", "md") {
+    body {
+        &::after {
+            background-image: url("../assets/images/background/background-md.png");
+            background-size: 1280px;
+        }
+    }
+}
+
+@include breakpoint("min", "lg") {
+    body {
+        &::after {
+            background-image: url("../assets/images/background/background-lg.png");
+            background-size: cover;
+        }
+    }
+}
+
+.wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+@include breakpoint("min", "sm") {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+@include breakpoint("min", "md") {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+@include breakpoint("min", "lg") {
+    .container {
+        padding: 0 80px;
+    }
+}
+
+@include breakpoint("min", "xl") {
+    .container {
+        padding: 0 120px;
+    }
+}
+
+button,
+input {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    &,
+    &::after,
+    &::before {
+        outline: 0;
+    }
+}

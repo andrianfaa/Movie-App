@@ -1,0 +1,116 @@
+@include breakpoint("max", "md") {
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba($color: color("background/900"), $alpha: 0.5);
+        z-index: 10;
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+
+        &.is-open {
+            opacity: 1;
+            visibility: visible;
+
+            > ul {
+                transform: translateX(0);
+            }
+        }
+
+        > ul {
+            transition: all 0.3s ease-in-out;
+            transform: translateX(250px);
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            width: 100%;
+            max-width: 250px;
+            background-color: color("background/800");
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            list-style-type: none;
+
+            > li {
+                width: 100%;
+
+                &#first {
+                    margin-top: 1rem;
+                }
+
+                > a {
+                    @include link;
+                    display: block;
+                    width: 100%;
+                    padding: 1rem 0;
+                    color: color("text/400");
+                    text-decoration: none;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover,
+                    &.active {
+                        color: color("primary/400");
+
+                        > .icon {
+                            margin-left: 0.25rem;
+                        }
+                    }
+
+                    > .icon {
+                        transition: margin-left 0.3s ease-in-out;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint("min", "md") {
+    .navbar-menu {
+        > ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+
+            > .navbar-toggler {
+                display: none;
+            }
+
+            > li {
+                margin-left: 2rem;
+
+                > a {
+                    @include link;
+                    display: block;
+                    width: 100%;
+                    color: color("text/400");
+                    text-decoration: none;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover,
+                    &.active {
+                        color: color("primary/400");
+
+                        > .icon {
+                            margin-right: unset;
+                            margin-left: 0.25rem;
+                        }
+                    }
+
+                    > .icon {
+                        margin-right: 0.25rem;
+                        transition: margin 0.3s ease-in-out;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}

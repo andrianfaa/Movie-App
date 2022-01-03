@@ -1,0 +1,26 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba($color: color("background/900"), $alpha: 0.5);
+    z-index: 50;
+    backdrop-filter: blur(25px);
+
+    > .container {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    ~ #mainContent {
+        margin-top: 80px;
+    }
+}
+
+@import "./navbar-brand";
+@import "./navbar-toggler";
+@import "./navbar-menu";
