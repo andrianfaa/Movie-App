@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
 // import PrivateRoute from './routes/PrivateRoute';
 import HomePage from './views/Home';
-import Navbar from './components/navbar/Navbar';
+import MoviePage from './views/Movie';
+import Error404 from './views/404';
 
 export default function App() {
     return (
@@ -11,6 +13,8 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/movies" element={<MoviePage />} />
+                <Route path="*" element={<Error404 />} />
             </Routes>
         </Router>
     );

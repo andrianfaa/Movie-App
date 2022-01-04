@@ -1,0 +1,103 @@
+#listRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-card {
+    text-decoration: none;
+    width: 100%;
+    height: 480px;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    background-color: rgba($color: color("background/600"), $alpha: 0.25);
+    margin: 0.65rem 0;
+
+    &-image {
+        width: 100%;
+        height: 400px;
+        background-color: color("background/700");
+        border-radius: 0.5rem;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            > img {
+                transform: scale(1.05);
+                opacity: 0.5;
+            }
+        }
+
+        > img {
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    }
+
+    &-star {
+        position: absolute;
+        z-index: 5;
+        top: 1rem;
+        left: 1rem;
+        border-radius: 0.5rem;
+        background-color: rgba($color: #000000, $alpha: 0.75);
+        padding: 0.5rem;
+        color: #ffad49;
+
+        > svg {
+            display: inline;
+            vertical-align: top;
+            margin-right: 0.25rem;
+        }
+
+        > span {
+            font-weight: 600;
+            vertical-align: middle;
+        }
+    }
+
+    &-content {
+        height: 75px;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        > p {
+            width: 100%;
+            display: -webkit-box;
+            display: -moz-box;
+            -webkit-line-clamp: 2;
+            -moz-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
+    }
+}
+
+@include breakpoint("min", "sm") {
+    .movie-card {
+        width: calc(50% - 0.75rem);
+    }
+}
+
+@include breakpoint("min", "md") {
+    .movie-card {
+        width: calc(33.33% - 0.75rem);
+    }
+}
+
+@include breakpoint("min", "lg") {
+    .movie-card {
+        width: calc(25% - 0.75rem);
+    }
+}
