@@ -9,7 +9,9 @@ import { getMovies, getTrendingMovies } from '../actions/Movie';
 import { getTvShow } from '../actions/TvShow';
 import { setMovies, setTrendingMovies } from '../store/reducers/Movie.reducer';
 import { setTvShows } from '../store/reducers/TvShow.reducer';
+// eslint-disable-next-line no-unused-vars
 import MovieCard from '../components/card/MovieCard';
+import MovieCardPlaceholder from '../components/card/MovieCardPlaceholder';
 
 export default function HomePage() {
     const [category, setCategory] = React.useState('all');
@@ -106,21 +108,24 @@ export default function HomePage() {
                     </span>
                 </h2>
 
-                {movies.length > 0 ? (
-                    <div id="listRow">
-                        {renderContentByCategory().map((item) => (
-                            <MovieCard
-                                key={item.id}
-                                id={item.id}
-                                title={item.original_title || item.original_name}
-                                poster={item.poster_path}
-                                rating={item.vote_average}
-                            />
-                        ))}
-                    </div>
-                ) : (
-                    <p>loading</p>
-                )}
+                <div id="listRow">
+                    {movies.length > 0 ? renderContentByCategory().map((item) => (
+                        <MovieCard
+                            key={item.id}
+                            id={item.id}
+                            title={item.original_title || item.original_name}
+                            poster={item.poster_path}
+                            rating={item.vote_average}
+                        />
+                    )) : (
+                        <>
+                            <MovieCardPlaceholder />
+                            <MovieCardPlaceholder />
+                            <MovieCardPlaceholder />
+                            <MovieCardPlaceholder />
+                        </>
+                    )}
+                </div>
             </div>
         </>
     );

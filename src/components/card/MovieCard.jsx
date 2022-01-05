@@ -17,7 +17,7 @@ export default function MovieCard({
                     <IconStar />
                     <span>{rating}</span>
                 </div>
-                <img src={CONFIG.tmdbApi.image + poster} alt={title} />
+                <img data-src={CONFIG.tmdbApi.image + poster} alt={title} className="lazyload" />
             </div>
             <div className="movie-card-content">
                 <p className="text-white text-bold">{title}</p>
