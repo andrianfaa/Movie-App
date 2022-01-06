@@ -59,6 +59,12 @@
             z-index: 5;
             left: 3.5rem;
             color: color("text/500");
+
+            &.focus {
+                font-size: 0.75rem;
+                transform: translateY(-1rem);
+                color: color("text/300");
+            }
         }
     }
 }

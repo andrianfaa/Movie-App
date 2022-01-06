@@ -41,6 +41,7 @@ export default function TvShowPage() {
                             title={tvshow.original_name}
                             poster={tvshow.poster_path}
                             rating={tvshow.vote_average}
+                            type={tvshow.media_type ?? 'tv'}
                         />
                     )) : (
                         <>

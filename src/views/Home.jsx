@@ -116,6 +116,7 @@ export default function HomePage() {
                             title={item.original_title || item.original_name}
                             poster={item.poster_path}
                             rating={item.vote_average}
+                            type={item.media_type ?? 'tv'}
                         />
                     )) : (
                         <>

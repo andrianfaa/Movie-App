@@ -28,7 +28,7 @@
         &:hover {
             > img {
                 transform: scale(1.05);
-                opacity: 0.5;
+                filter: brightness(60%);
             }
         }
 

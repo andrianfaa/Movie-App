@@ -9,9 +9,10 @@ export default function MovieCard({
     title,
     poster,
     rating,
+    type,
 }) {
     return (
-        <Link to={`/${id}`} className="movie-card">
+        <Link to={`/${type}/${id}`} className="movie-card">
             <div className="movie-card-image">
                 <div className="movie-card-star">
                     <IconStar />

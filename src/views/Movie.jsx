@@ -43,6 +43,7 @@ export default function MoviePage() {
                             title={movie.original_title || movie.original_name}
                             poster={movie.poster_path}
                             rating={movie.vote_average}
+                            type={movie.media_type}
                         />
                     )) : (
                         <>

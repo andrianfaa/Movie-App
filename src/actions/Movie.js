@@ -37,7 +37,7 @@ const getDetailMovie = async (id) => {
         return [];
     }
 
-    return data.results;
+    return data;
 };
 
 const getTrendingMovies = async () => {

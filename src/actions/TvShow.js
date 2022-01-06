@@ -13,6 +13,18 @@ const getTvShow = async () => {
     return data.results;
 };
 
+const getDetailTvShow = async (id) => {
+    const response = await axios.get(ApiEndpoint.Tv.Detail(id));
+    const { data } = response;
+
+    if (!data) {
+        return [];
+    }
+
+    return data;
+};
+
 export {
     getTvShow,
+    getDetailTvShow,
 };
