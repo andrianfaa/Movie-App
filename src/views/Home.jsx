@@ -3,13 +3,13 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable max-len */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Hero from '../components/hero/Hero';
 import { getMovies, getTrendingMovies } from '../actions/Movie';
 import { getTvShow } from '../actions/TvShow';
 import { setMovies, setTrendingMovies } from '../store/reducers/Movie.reducer';
 import { setTvShows } from '../store/reducers/TvShow.reducer';
-// eslint-disable-next-line no-unused-vars
 import MovieCard from '../components/card/MovieCard';
 import MovieCardPlaceholder from '../components/card/MovieCardPlaceholder';
 
@@ -65,9 +65,17 @@ export default function HomePage() {
 
     return (
         <>
-            <Hero>
+            <Hero include>
                 <h1>MaileHereko</h1>
-                <p>List of movies and TV Shows, I, Andrian Fadhilla, have watched till date. Explore what I have watched and also feel free to make a suggestion. 😉</p>
+                <p>
+                    List of movies and TV Shows, I,
+                    {' '}
+                    <a href="https://andriann.co/" className="link">Andrian Fadhilla</a>
+                    , have watched till date. Explore what I have watched and also feel free to make a
+                    {' '}
+                    <Link to="/suggest" className="link">suggestion</Link>
+                    . 😉
+                </p>
             </Hero>
             <div className="container">
                 <div className="category-control-wrapper">

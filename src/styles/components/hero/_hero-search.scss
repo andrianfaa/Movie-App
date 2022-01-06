@@ -1,6 +1,7 @@
 .hero-search {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
     margin-top: 1rem;
@@ -66,5 +67,11 @@
                 color: color("text/300");
             }
         }
+    }
+}
+
+@include breakpoint("min", "sm") {
+    .hero-search {
+        flex-wrap: unset;
     }
 }
