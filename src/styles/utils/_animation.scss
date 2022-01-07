@@ -1,0 +1,24 @@
+@mixin animate-skeleton($duration: 2s, $easing: ease-in-out) {
+    animation: skeleton-animation $duration $easing infinite;
+}
+
+@keyframes skeleton-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

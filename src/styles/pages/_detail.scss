@@ -1,0 +1,178 @@
+.detail {
+    &-header {
+        width: 100%;
+        position: relative;
+        margin-bottom: 5rem;
+    }
+
+    &-image {
+        width: 100%;
+        height: 450px;
+        max-height: 100%;
+        margin-bottom: 1rem;
+        border-radius: 0.75rem;
+        background-image: url("../../assets/images/background/image-placeholder-full.jpg");
+        background-size: cover;
+        background-position: center;
+
+        > img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 0.75rem;
+        }
+    }
+
+    &-content {
+        bottom: -3.5rem;
+        position: absolute;
+        width: 90%;
+        margin: 0 1rem;
+        max-width: 650px;
+        border-radius: 1rem;
+        background-color: rgba($color: color("background/800"), $alpha: 0.75);
+        backdrop-filter: blur(25px);
+        padding: 1.5rem;
+        z-index: 5;
+
+        > p {
+            color: color("primary/400");
+            margin-bottom: 0.5rem;
+        }
+
+        > h3 {
+            width: 100%;
+            display: -webkit-box;
+            display: -moz-box;
+            -webkit-line-clamp: 2;
+            -moz-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
+    }
+
+    &-row {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: top;
+    }
+
+    &-col {
+        &-image {
+            width: 100%;
+            max-height: 600px;
+            background-image: url("../../assets/images/background/image-placeholder-full-portrait.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.75rem;
+
+            > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 0.75rem;
+            }
+        }
+
+        &-rating {
+            margin: 1rem 0;
+
+            &-star {
+                width: 100%;
+                max-width: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                background-color: rgba($color: #000000, $alpha: 0.35);
+
+                > svg {
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    color: #ffad49;
+                    margin-right: 0.5rem;
+                }
+
+                > span {
+                    font-weight: 500;
+                    color: #ffad49;
+                    vertical-align: bottom;
+                }
+            }
+        }
+
+        &-content {
+            width: 100%;
+            padding: 1rem 0;
+
+            > pre {
+                overflow: scroll;
+            }
+
+            &-item {
+                margin: 1rem 0;
+            }
+
+            &-info {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                &-item {
+                    margin: 1rem 0;
+                    width: calc(50% - 0.5rem);
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint("min", "md") {
+    .detail {
+        &-header {
+            margin-bottom: 8rem;
+        }
+
+        &-image {
+            height: 500px;
+            > img {
+                height: 500px;
+            }
+        }
+
+        &-content {
+            bottom: -5rem;
+            padding: 2rem;
+        }
+
+        &-row {
+            max-width: 1080px;
+            margin: 0 auto;
+            flex-direction: row;
+        }
+
+        &-col {
+            &-image {
+                width: calc(40% - 1rem);
+            }
+
+            &-content {
+                width: calc(60% - 1rem);
+            }
+
+            &-content {
+                padding: 0 2rem;
+            }
+        }
+    }
+}

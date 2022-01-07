@@ -6,10 +6,12 @@ import NavbarLink from './NavbarLink';
 import NavbarToggler from './NavbarToggler';
 import NavbarTogglerClose from './NavbarTogglerClose';
 import Logo from '../../assets/images/logo.svg';
+import LogoFull from '../../assets/images/logo-full.svg';
 import { IconArrowRight } from '../icons';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [currentLogo, setCurrentLogo] = useState(Logo);
     const navigate = useNavigate();
 
     const toggle = () => setIsOpen(!isOpen);
@@ -30,12 +32,26 @@ export default function Navbar() {
         }
     };
 
+    React.useEffect(async () => {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                setCurrentLogo(LogoFull);
+            } else {
+                setCurrentLogo(Logo);
+            }
+        });
+
+        if (window.innerWidth > 768) {
+            setCurrentLogo(LogoFull);
+        }
+    });
+
     return (
         <nav className="navbar">
             <div className="container">
                 <div className="navbar-brand">
                     <img
-                        src={Logo}
+                        src={currentLogo}
                         alt="Logo"
                         tabIndex={0}
                         onClick={(event) => handleClick(event)}

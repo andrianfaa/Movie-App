@@ -1,0 +1,23 @@
+.footer {
+    background-color: color("background/900");
+    margin-top: 1.5rem;
+
+    > .container {
+        min-height: 250px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        > img {
+            width: 50px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        > p {
+            max-width: 500px;
+        }
+    }
+}

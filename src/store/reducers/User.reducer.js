@@ -14,10 +14,8 @@ const UserReducer = createSlice({
     },
 });
 
-const { setAuth } = UserReducer.actions;
-
-export {
+export const {
     setAuth,
-};
+} = UserReducer.actions;
 
 export default UserReducer.reducer;

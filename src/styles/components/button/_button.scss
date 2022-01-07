@@ -1,0 +1,19 @@
+.btn {
+    padding: 0.85rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 0;
+    text-decoration: none;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    > .icon {
+        font-size: 1.25rem;
+        vertical-align: middle;
+        animation: loading 1s linear infinite;
+    }
+}
+
+@import "./button-regular";

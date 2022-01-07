@@ -59,7 +59,7 @@ body {
     body {
         &::after {
             background-image: url("../assets/images/background/background-lg.png");
-            background-size: cover;
+            background-size: 100%;
         }
     }
 }

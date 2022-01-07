@@ -5,6 +5,11 @@ h4,
 h5,
 h6 {
     color: color("white/100");
+
+    > span {
+        vertical-align: middle;
+        margin-left: 0.75rem;
+    }
 }
 
 /*
@@ -16,6 +21,13 @@ h2,
 h3 {
     font-weight: 600;
     margin-bottom: 0.5rem;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 h1 {
@@ -31,9 +43,15 @@ h2 {
 }
 
 h3 {
-    font-size: 32px;
+    font-size: 24px;
     line-height: 40px;
     letter-spacing: -0.02rem;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.015rem;
 }
 
 @include breakpoint("min", "lg") {
@@ -47,6 +65,10 @@ h3 {
 
     h3 {
         font-size: 32px;
+    }
+
+    h4 {
+        font-size: 24px;
     }
 }
 
@@ -71,6 +93,26 @@ h3 {
 /*
  * Typography: Body
  */
+.body {
+    &-small {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+
+    &-large {
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: 0;
+    }
+
+    &-regular {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+}
+
 @mixin body-small {
     font-size: 14px;
     line-height: 24px;
@@ -97,12 +139,19 @@ h3 {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 2%;
+    text-decoration: none;
+    color: color("primary/400");
+
+    &:hover {
+        text-decoration: underline;
+    }
 
     &-small {
         font-weight: 600;
         font-size: 14px;
         line-height: 24px;
         letter-spacing: 2%;
+        text-decoration: none;
     }
 }
 
@@ -118,4 +167,22 @@ h3 {
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 2%;
+}
+
+.text {
+    &-white {
+        color: #ffffff;
+    }
+
+    &-normal {
+        color: color("text/400");
+    }
+
+    &-light {
+        color: color("text/100");
+    }
+
+    &-bold {
+        font-weight: 600;
+    }
 }
