@@ -3,3 +3,4 @@
 /.git
 /yarn.lock
 /package-lock.json
+/build
