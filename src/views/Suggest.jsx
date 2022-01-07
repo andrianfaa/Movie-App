@@ -4,6 +4,7 @@ import Hero from '../components/hero/Hero';
 import { getMovies } from '../actions/Movie';
 import { Search } from '../actions/All';
 import MovieCardSuggestion from '../components/card/MovieCardSuggestion';
+import ReactHelmet from '../components/helmet/ReactHelmet';
 
 export default function SuggestPage() {
     const [suggestions, setSuggestions] = React.useState([]);
@@ -60,6 +61,12 @@ export default function SuggestPage() {
 
     return (
         <>
+            <ReactHelmet
+                title="Suggest Me | MaileHereko"
+                description="MaileHereko Suggestion Page"
+                keywords="MaileHereko, Suggest, Suggestion Page"
+                url="https://mailehereko.project.andriann.co/suggest"
+            />
             <Hero
                 activeState={isActive}
                 include

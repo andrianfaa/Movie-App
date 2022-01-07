@@ -5,6 +5,7 @@ import { setTvShows } from '../store/reducers/TvShow.reducer';
 import Hero from '../components/hero/Hero';
 import MovieCard from '../components/card/MovieCard';
 import MovieCardPlaceholder from '../components/card/MovieCardPlaceholder';
+import ReactHelmet from '../components/helmet/ReactHelmet';
 
 export default function TvShowPage() {
     const Dispatch = useDispatch();
@@ -22,6 +23,13 @@ export default function TvShowPage() {
 
     return (
         <>
+            <ReactHelmet
+                title="Tv Show | MaileHereko"
+                description="MaileHereko Tv Show Page"
+                keywords="MaileHereko, Tv, Tv Show Page"
+                url="https://mailehereko.project.andriann.co/tvshow"
+            />
+
             <Hero>
                 <p>MaileHereko</p>
                 <h1>Tv Shows</h1>

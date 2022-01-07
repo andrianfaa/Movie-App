@@ -6,6 +6,7 @@ import { setMovies } from '../store/reducers/Movie.reducer';
 import Hero from '../components/hero/Hero';
 import MovieCard from '../components/card/MovieCard';
 import MovieCardPlaceholder from '../components/card/MovieCardPlaceholder';
+import ReactHelmet from '../components/helmet/ReactHelmet';
 
 export default function MoviePage() {
     const Dispatch = useDispatch();
@@ -23,6 +24,13 @@ export default function MoviePage() {
 
     return (
         <>
+            <ReactHelmet
+                title="Movie | MaileHereko"
+                description="MaileHereko Movie Page"
+                keywords="MaileHereko, Movie, Movie Page"
+                url="https://mailehereko.project.andriann.co/movie"
+            />
+
             <Hero>
                 <p>MaileHereko</p>
                 <h1>Movies</h1>
