@@ -9,6 +9,7 @@ const Store = configureStore({
         movie: MovieReducer,
         tvshow: TvShowReducer,
     },
+    devTools: process.env.NODE_ENV !== 'production',
 });
 
 export default Store;
