@@ -65,7 +65,7 @@ export default function HomePage() {
 
     return (
         <>
-            <Hero include>
+            <Hero>
                 <h1>MaileHereko</h1>
                 <p>
                     List of movies and TV Shows, I,
